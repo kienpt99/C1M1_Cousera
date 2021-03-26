@@ -37,7 +37,6 @@ void main() {
                                 
   print_array(test,SIZE);
   print_statistics(test,SIZE);
-  sort_array(test,SIZE);
   print_array(test,SIZE);
 
 }
@@ -56,9 +55,9 @@ char find_maximum(unsigned char* p_dataset, unsigned int length) {
   return -1;
  }
  
- char max = 0;
+ char max = p_dataset[0];
  
- for(char i = 0 ; i < length ; i++) {
+ for(unsigned int i = 1 ; i < length ; i++) {
   if(p_dataset[i] > max) {
    max = p_dataset[i];
   }
@@ -139,7 +138,7 @@ unsigned char* sort_array(unsigned char* p_dataset, unsigned int length)
   {
    if(p_dataset[i] < p_dataset[j])
    {
-    p_dataset[i] = temp;
+    temp = p_dataset[i];
     p_dataset[i] = p_dataset[j];
     p_dataset[j] = temp;
    }
