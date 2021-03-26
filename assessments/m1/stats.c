@@ -34,9 +34,11 @@ void main() {
                               200, 122, 150, 90,   92,  87, 177, 244,
                               201,   6,  12,  60,   8,   2,   5,  67,
                                 7,  87, 250, 230,  99,   3, 100,  90};
-
-  /* Other Variable Declarations Go Here */
-  /* Statistics and Printing Functions Go Here */
+                                
+  print_array(test,SIZE);
+  print_statistics(test,SIZE);
+  sort_array(test,SIZE);
+  print_array(test,SIZE);
 
 }
 
@@ -49,9 +51,20 @@ void main() {
  * @return -1 if not successful
  *         the maximum value of a dataset if successful
  */
-char find_maximum(unsigned char* p_dataset, unsigned int length) 
-{
-
+char find_maximum(unsigned char* p_dataset, unsigned int length) {
+ if(p_dataset == NULL || length <= 0) {
+  return -1;
+ }
+ 
+ char max = 0;
+ 
+ for(char i = 0 ; i < length ; i++) {
+  if(p_dataset[i] > max) {
+   max = p_dataset[i]
+  }
+ }
+ 
+ return max;
 }
 
 /**
@@ -63,9 +76,20 @@ char find_maximum(unsigned char* p_dataset, unsigned int length)
  * @return -1 if not successful
  *         the minimum value of a dataset if successful
  */
-char find_minimum(unsigned char* p_dataset, unsigned int length) 
-{
-
+char find_minimum(unsigned char* p_dataset, unsigned int length) {
+ if(p_dataset == NULL || length <= 0) {
+  return -1;
+ }
+ 
+ char min = p_dataset[0];
+ 
+ for(char i = 1 ; i < length ; i++) {
+  if(p_dataset[i] < min) {
+   min = p_dataset[i]
+  }
+ }
+ 
+ return min;
 }
 
 /**
@@ -79,7 +103,17 @@ char find_minimum(unsigned char* p_dataset, unsigned int length)
  */
 char find_median(unsigned char* p_dataset, unsigned int length)
 {
-
+ if(p_dataset == NULL || length <= 0) {
+  return -1;
+ }
+ 
+ sort_array(p_dataset,length);
+ if(length % 2 == 0)
+ {
+  return (p_dataset[length/2] + p_dataset[(length/2) - 1]) / 2; 
+ }else{
+  return p_dataset[length/2];
+ }
 }
 
 /**
@@ -93,7 +127,26 @@ char find_median(unsigned char* p_dataset, unsigned int length)
  */
 unsigned char* sort_array(unsigned char* p_dataset, unsigned int length)
 {
-
+ if(p_dataset == NULL || length <= 0) {
+  return -1;
+ }
+ 
+ char temp;
+ 
+ for(unsigned int i = 0; i < length; i++)
+ {
+  for(unsigned int j = 1; j < length; j++)
+  {
+   if(p_dataset[i] < p_dataset[j])
+   {
+    p_dataset[i] = temp;
+    p_dataset[i] = p_dataset[j];
+    p_dataset[j] = temp;
+   }
+  }
+ }
+ 
+ return p_dataset;
 }
 
 /**
@@ -107,7 +160,14 @@ unsigned char* sort_array(unsigned char* p_dataset, unsigned int length)
  */
 char find_mean(unsigned char* p_dataset, unsigned int length)
 {
-
+ unsigned int sum = 0;
+ 
+ for(unsigned int i = 0; i < length; i++)
+ {
+  sum = sum + p_dataset[i];
+ }
+ 
+ return sum/length;
 }
 
 /**
@@ -120,7 +180,12 @@ char find_mean(unsigned char* p_dataset, unsigned int length)
  */
 void print_array(unsigned char* p_dataset, unsigned int length)
 {
-
+ printf("test[%d] = {", length);
+ for(unsigned int i = 0 ;i < length - 1; i++)
+ {
+  printf("%d, ", p_dataset[i]);
+ }
+ printf("%d }",p_dataset[length - 1]);
 }
 
 /**
@@ -133,5 +198,8 @@ void print_array(unsigned char* p_dataset, unsigned int length)
  */
 void print_statistics(unsigned char* p_dataset, unsigned int length)
 {
-
+ printf("minimum = %d\n",find_minimum(p_dataset,length));
+ printf("maximum = %d\n",find_maximum(p_dataset,length));
+ printf("mean = %d\n",find_mean(p_dataset,length));
+ printf("median = %d\n",find_median(p_dataset,length)); 
 }
