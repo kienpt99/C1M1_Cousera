@@ -134,7 +134,7 @@ unsigned char* sort_array(unsigned char* p_dataset, unsigned int length)
  
  for(unsigned int i = 0; i < length; i++)
  {
-  for(unsigned int j = 1; j < length; j++)
+  for(unsigned int j = i + 1; j < length; j++)
   {
    if(p_dataset[i] < p_dataset[j])
    {
