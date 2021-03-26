@@ -40,4 +40,98 @@ void main() {
 
 }
 
-/* Add other Implementation File Code Here */
+/**
+ * @brief Given an array of data and a length, returns the maximum
+ *
+ * @param p_dataset A unsigned char pointer to an n-element data array
+ * @param length An unsigned integer as the size of the array
+ *
+ * @return -1 if not successful
+ *         the maximum value of a dataset if successful
+ */
+char find_maximum(unsigned char* p_dataset, unsigned int length) 
+{
+
+}
+
+/**
+ * @brief Given an array of data and a length, returns the minimum
+ *
+ * @param p_dataset A unsigned char pointer to an n-element data array
+ * @param length An unsigned integer as the size of the array
+ *
+ * @return -1 if not successful
+ *         the minimum value of a dataset if successful
+ */
+char find_minimum(unsigned char* p_dataset, unsigned int length) 
+{
+
+}
+
+/**
+ * @brief Given an array of data and a length, returns the median value
+ *
+ * @param p_dataset A unsigned char pointer to an n-element data array
+ * @param length An unsigned integer as the size of the array
+ *
+ * @return -1 if not successful
+ *         the median value of a dataset if successful
+ */
+char find_median(unsigned char* p_dataset, unsigned int length)
+{
+
+}
+
+/**
+ * @brief Given an array of data and a length, sorts the array from largest to smallest.
+ *
+ * @param p_dataset A unsigned char pointer to an n-element data array
+ * @param length An unsigned integer as the size of the array
+ *
+ * @return -1 if not successfully
+ *	   pointer to char array after sorting if successfully
+ */
+unsigned char* sort_array(unsigned char* p_dataset, unsigned int length)
+{
+
+}
+
+/**
+ * @brief Given an array of data and a length, returns the mean
+ *
+ * @param p_dataset A unsigned char pointer to an n-element data array
+ * @param length An unsigned integer as the size of the array
+ *
+ * @return -1 if not successfully
+ *	    the mean value of a dataset if successfully
+ */
+char find_mean(unsigned char* p_dataset, unsigned int length)
+{
+
+}
+
+/**
+ * @brief Given an array of data and a length, prints the array to the screen
+ *
+ * @param p_dataset A unsigned char pointer to an n-element data array
+ * @param length An unsigned integer as the size of the array
+ *
+ * @return void 
+ */
+void print_array(unsigned char* p_dataset, unsigned int length)
+{
+
+}
+
+/**
+ * @brief A function that prints the statistics of an array	 including minimum, maximum, mean, and median.
+ *
+ * @param p_dataset A unsigned char pointer to an n-element data array
+ * @param length An unsigned integer as the size of the array
+ *
+ * @return void 
+ */
+void print_statistics(unsigned char* p_dataset, unsigned int length)
+{
+
+}
