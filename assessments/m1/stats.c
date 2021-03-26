@@ -60,7 +60,7 @@ char find_maximum(unsigned char* p_dataset, unsigned int length) {
  
  for(char i = 0 ; i < length ; i++) {
   if(p_dataset[i] > max) {
-   max = p_dataset[i]
+   max = p_dataset[i];
   }
  }
  
@@ -85,7 +85,7 @@ char find_minimum(unsigned char* p_dataset, unsigned int length) {
  
  for(char i = 1 ; i < length ; i++) {
   if(p_dataset[i] < min) {
-   min = p_dataset[i]
+   min = p_dataset[i];
   }
  }
  
@@ -128,7 +128,7 @@ char find_median(unsigned char* p_dataset, unsigned int length)
 unsigned char* sort_array(unsigned char* p_dataset, unsigned int length)
 {
  if(p_dataset == NULL || length <= 0) {
-  return -1;
+  return NULL;
  }
  
  char temp;

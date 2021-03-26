@@ -91,6 +91,6 @@ char find_minimum(unsigned char* p_dataset, unsigned int length);
  *
  * @return pointer to char array after sorting.
  */
-char* sort_array(unsigned char* p_dataset, unsigned int length);
+unsigned char* sort_array(unsigned char* p_dataset, unsigned int length);
 
 #endif /* __STATS_H__ */
