@@ -50,12 +50,12 @@ void main() {
  * @return -1 if not successful
  *         the maximum value of a dataset if successful
  */
-char find_maximum(unsigned char* p_dataset, unsigned int length) {
+unsigned char find_maximum(unsigned char* p_dataset, unsigned int length) {
  if(p_dataset == NULL || length <= 0) {
   return -1;
  }
  
- char max = p_dataset[0];
+ unsigned int max = p_dataset[0];
  
  for(unsigned int i = 1 ; i < length ; i++) {
   if(p_dataset[i] > max) {
@@ -63,6 +63,7 @@ char find_maximum(unsigned char* p_dataset, unsigned int length) {
   }
  }
  
+ printf("%d...",max);
  return max;
 }
 

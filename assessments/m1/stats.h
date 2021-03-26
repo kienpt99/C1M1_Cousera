@@ -70,7 +70,7 @@ char find_mean(unsigned char* p_dataset, unsigned int length);
  * @return -1 if not successful
  *         the maximum value of a dataset if successful
  */
-char find_maximum(unsigned char* p_dataset, unsigned int length);
+unsigned char find_maximum(unsigned char* p_dataset, unsigned int length);
 
 /**
  * @brief Given an array of data and a length, returns the minimum
